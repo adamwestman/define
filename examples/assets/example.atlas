@@ -1,0 +1,9 @@
+images {
+  image: "/examples/assets/volume_off.png"
+}
+images {
+  image: "/examples/assets/volume_on.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

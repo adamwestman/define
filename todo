@@ -1,0 +1,15 @@
+Change how new input_handlers are added to the input_manager
+* input_manager.add_handler(type : hash, handler : table)
+
+Create a shared "input_obj" which is the interface of all input components.
+* enable, disable
+* is_disabled -- could this be a meta table that if called returns boolean, if "set" changes the value?. == vs =. http://lua-users.org/wiki/ObjectProperties
+* show, hide
+* is_hidden
+* on_input
+* create(...)
+* on_state_changed(instance, callback(instance, from, to))
+* on_text_changed -- example of component specific
+
+
+utf8 support

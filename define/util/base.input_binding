@@ -1,0 +1,32 @@
+key_trigger {
+  input: KEY_BACKSPACE
+  action: "action_backspace"
+}
+key_trigger {
+  input: KEY_LEFT
+  action: "action_left"
+}
+key_trigger {
+  input: KEY_TAB
+  action: "action_tab"
+}
+key_trigger {
+  input: KEY_RIGHT
+  action: "action_right"
+}
+key_trigger {
+  input: KEY_ENTER
+  action: "action_enter"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_LEFT
+  action: "action_touch"
+}
+text_trigger {
+  input: TEXT
+  action: "action_text"
+}
+text_trigger {
+  input: MARKED_TEXT
+  action: "action_marked_text"
+}

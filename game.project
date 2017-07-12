@@ -1,0 +1,16 @@
+[library]
+include_dirs = define
+
+[project]
+title = DeFine
+version = 0.1.0
+
+[bootstrap]
+main_collection = /examples/volume/volume.collectionc
+
+[script]
+shared_state = 1
+
+[input]
+game_binding = /define/util/base.input_bindingc
+

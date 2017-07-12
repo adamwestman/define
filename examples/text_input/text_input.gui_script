@@ -1,0 +1,16 @@
+local text = require "define.gui.text"
+
+function init(self)
+  self.name = text.create("name")
+  self.place = text.create("place", {max_lengt=10})
+
+  msg.post(".", "acquire_input_focus")
+end
+
+function on_input(self, action_id, action)
+  if text.on_input(self.name, action_id, action) then
+    return true
+  elseif text.on_input(self.place, action_id, action) then
+    return true
+  end
+end

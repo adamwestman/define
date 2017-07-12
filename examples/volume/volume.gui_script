@@ -1,0 +1,16 @@
+local button = require "define.gui.button"
+local volume_checkbox_transitions = require "examples.volume.volume_checkbox_transitions"
+
+function init(self)
+  self.volume = button.create("volume", volume_checkbox_transitions)
+
+  msg.post(".", "acquire_input_focus")
+end
+
+function on_input(self, action_id, action)
+  if button.on_input(self.volume, action_id, action) then
+    self.muted = not self.muted
+    button.set_state(self.volume, self.muted and hash("off") or hash("on"))
+    sound.set_group_gain(hash("master"), self.muted and 0 or 1)
+  end
+end
