@@ -1,0 +1,23 @@
+local scroll_view = require "define.gui.scroll_view"
+local button = require "define.gui.button"
+
+function init(self)
+    self.area = scroll_view.create("scroll_area")
+    self.first = button.create("first")
+    self.second = button.create("second")
+
+    scroll_view.add_child(self.area, "first")
+    scroll_view.add_child(self.area, "second")
+
+    msg.post(".", "acquire_input_focus")
+end
+
+function on_input(self, action_id, action)
+  if scroll_view.on_input(self.area, action_id, action) then
+    if button.on_input(self.first, action_id, action) then
+      print("First")
+    elseif button.on_input(self.second, action_id, action) then
+      print("Second")
+    end
+  end
+end
