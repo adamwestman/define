@@ -1,0 +1,40 @@
+local input_manager = require "define.input_manager"
+local button = require "define.gui.button"
+
+function init(self)
+	self.text_input = input_manager.add_button(self, button.create("text_input/bg"), function()
+		self.proxy = "#text_input"
+		msg.post(self.proxy, "async_load")
+	end)
+	
+	self.volume = input_manager.add_button(self, button.create("volume/bg"), function()
+		self.proxy = "#volume"
+		msg.post(self.proxy, "async_load")
+	end)
+	
+	self.back = input_manager.add_button(self, button.create("back/bg"), function()
+		msg.post(self.proxy, "unload")
+	end)
+	
+	button.hide(self.back)
+	input_manager.acquire()	
+end
+
+function on_input(self, action_id, action)
+	return input_manager.on_input(self, action_id, action)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "enable")
+		button.show(self.back)
+		button.hide(self.text_input)
+		button.hide(self.volume)
+		
+	elseif message_id == hash("proxy_unloaded") then
+		button.hide(self.back)
+		button.show(self.text_input)
+		button.show(self.volume)
+		
+	end
+end

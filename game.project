@@ -6,7 +6,7 @@ title = DeFine
 version = 0.1.0
 
 [bootstrap]
-main_collection = /examples/volume/volume.collectionc
+main_collection = /examples/examples.collectionc
 
 [script]
 shared_state = 1
