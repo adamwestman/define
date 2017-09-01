@@ -4,6 +4,9 @@ _When great is not good enough.. __it needs to be Fine.___
 
 A UI/UX library for the Defold engine, providing fundamental components to build a rich graphical user interface in no time.
 
+# Usage
+Add latest zip URL as a [dependency](http://www.defold.com/manuals/libraries/#_setting_up_library_dependencies) in your Defold project: `https://github.com/adamwestman/define/archive/master.zip`
+
 ## Input Manager
 
 The __define.input_manager__ provide a shared container to manage all components, allowing them to be grouped and prioritized.
